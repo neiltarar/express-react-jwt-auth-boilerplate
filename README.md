@@ -1,23 +1,57 @@
-# Express-React-JWT-Auth Boilerplate
+# :rocket: Express-React-JWT-Auth Boilerplate
 
 This project provides a jumpstart for building a full-stack web application with secure authentication using Express, React, TypeScript, and JSON Web Tokens (JWT). The boilerplate includes sign-in and sign-up pages.
 
-## Live Demo
+## :computer: Live Demo
 
-You can check out the live demo of the project [here](#)!
+I will serve the project from my server for a demo shortly
 
-## About
+## :page_facing_up: About
 
 This project is a boilerplate for creating a full-stack web application. It implements secure authentication using JWT, with user registration and sign-in functionality included.
+
+<details>
+    <summary> 
+        <strong> :wrench: Build </strong>
+    </summary>
 
 To get started with this boilerplate, clone the project with the following commands:
 
 ```zsh
-$ git clone express-react-jwt-auth-boilerplate
+$ git clone git@github.com:neiltarar/express-react-jwt-auth-boilerplate.git
 $ cd express-react-jwt-auth-boilerplate
 ```
 
-## Features
+If you are using React, just add your pages and build. If not, your static assets need to replace the build folder in auth-server.
+
+To build the dashboard:
+
+1. Navigate to the 'auth-dashboard' directory:
+
+```zsh
+$ cd auth-dashboard
+```
+
+2. Run the build command:
+
+```zsh
+$ npm i
+$ npm run build
+```
+
+This will generate a 'build' folder in the 'auth-server' directory with the compiled static assets. Replace the existing 'build' folder in the server with your own static assets if you are not using React.
+
+3. Install the dependencies for the server app
+
+```zsh
+$ cd auth-server
+$ npm i
+$ npm start
+```
+
+</details>
+
+## :star: Features
 
 The project includes the following features:
 
@@ -27,7 +61,7 @@ The project includes the following features:
 - Front-end built with React and TypeScript
 - Back-end built with Express.js
 
-## Tech Stack
+## :wrench: Tech Stack
 
 - React.js: JavaScript library for building user interfaces.
 - Express.js: Fast, unopinionated, minimalist web framework for Node.js.
