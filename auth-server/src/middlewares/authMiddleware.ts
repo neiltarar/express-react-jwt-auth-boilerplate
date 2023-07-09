@@ -6,8 +6,6 @@ dotenv.config();
 
 //@ts-ignore
 export const authenticateToken = async (req, res, next) => {
-	console.log("here");
-
 	const accessToken = req.cookies.accessToken;
 	const refreshToken = req.cookies.refreshToken;
 	if (accessToken === null) return res.sendStatus(401); // If there's no token, return 401 (Unauthorised)

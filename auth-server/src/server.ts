@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, "build")));
 app.use("/users", userRoutes);
 app.use("/sessions", sessionRoutes);
 
-app.get("/home", authenticateToken, (req, res) => {
+app.use((req, res) => {
 	res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 

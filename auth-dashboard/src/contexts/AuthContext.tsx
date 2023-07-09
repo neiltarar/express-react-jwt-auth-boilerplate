@@ -3,10 +3,6 @@ import axios from "axios";
 
 // @ts-ignore
 const AuthContext = createContext();
-const API_URL =
-	process.env.NODE_ENV === "production"
-		? process.env.REACT_APP_API_URL_DEPLOY
-		: process.env.REACT_APP_API_URL_DEV;
 
 export const useAuth = () => {
 	return useContext(AuthContext);
@@ -27,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 	const signup = async (values) => {
 		console.log("values: ", values);
 		try {
-			const response = await axios.post(`${API_URL}/users/signup`, values, {
+			const response = await axios.post(`/users/signup`, values, {
 				withCredentials: true,
 			});
 			return response;
@@ -40,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 	// @ts-ignore
 	const signin = async (values) => {
 		try {
-			const response = await axios.post(`${API_URL}/sessions/signin`, values, {
+			const response = await axios.post(`/sessions/signin`, values, {
 				withCredentials: true,
 			});
 			if (response.status === 200) {
@@ -60,6 +56,7 @@ export const AuthProvider = ({ children }) => {
 			localStorage.setItem("loading", JSON.stringify(false));
 			setLoading(false);
 			setCurrentUser(null);
+			//@ts-ignore
 			console.log(error);
 			return error;
 		}
@@ -68,7 +65,7 @@ export const AuthProvider = ({ children }) => {
 	const signout = async () => {
 		try {
 			const response = await axios.post(
-				`${API_URL}/sessions/signout`,
+				`/sessions/signout`,
 				{}, // empy post req body, this is needed for the credentials to be read.
 				{
 					withCredentials: true,

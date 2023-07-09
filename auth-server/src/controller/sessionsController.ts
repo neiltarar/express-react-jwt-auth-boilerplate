@@ -24,7 +24,7 @@ export const signin = async (req, res) => {
 				{ userId: user.id, email: user.email },
 				//@ts-ignore
 				process.env.ACCESS_TOKEN_SECRET_KEY,
-				{ expiresIn: "1m" }
+				{ expiresIn: "10m" } // Access token expires every 10 mins
 			);
 
 			// create refresh token
@@ -32,7 +32,7 @@ export const signin = async (req, res) => {
 				{ userId: user.id, email: user.email },
 				//@ts-ignore
 				process.env.REFRESH_TOKEN_SECRET_KEY,
-				{ expiresIn: "48h" }
+				{ expiresIn: "48h" } // Refresh token expires every 2 days
 			);
 
 			// delete any existing previous refresh tokens for the user and create a new one
@@ -69,6 +69,8 @@ export const signin = async (req, res) => {
 		} else {
 			res.status(400).json({ message: "Unauthorised" });
 		}
+	} else {
+		res.status(400).json({ message: "Unauthorised" });
 	}
 };
 
