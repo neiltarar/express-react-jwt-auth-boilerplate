@@ -40,8 +40,9 @@ const Home: React.FC = () => {
 			>
 				<h1>Welcome Home, {currentUser && currentUser.user.name}!</h1>
 				<p>
-					Feel free to implement this authoentication strategy to your app and
-					your needs. You can log out at any time by clicking the logout button.
+					Feel free to implement this authentication strategy into your app
+					according to your specific needs. You can log out at any time by
+					clicking the logout button.
 				</p>
 			</Box>
 		</Layout>

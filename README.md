@@ -2,9 +2,12 @@
 
 This project provides a jumpstart for building a full-stack web application with secure authentication using Express, React, TypeScript, and JSON Web Tokens (JWT). The boilerplate includes sign-in and sign-up pages.
 
+In the users table, each new user record includes an `is_activated` field. After creating a new user, remember to manually set this field to true to activate the user in the database. Until a user is `activated`, they will not be able to log in.
+
 ## :computer: Live Demo
 
-I will serve the project from my server for a demo shortly
+I will serve the project from my server for a demo soon.
+![Demo GIF](./auth_demo.gif)
 
 ## :page_facing_up: About
 
