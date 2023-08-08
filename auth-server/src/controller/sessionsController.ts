@@ -59,6 +59,9 @@ export const signin = async (req, res) => {
 				console.log("Error: Couldn't save the refresh token");
 				return res.status(500).json({ message: "Internal Server Error" }); // Add return statement here to prevent further execution
 			}
+		} else {
+			// if user exists but the password is incorrect
+			res.status(400).json({ message: "Unauthorised" });
 		}
 		// if the user exists but not yet activated
 	} else if (user && !user.is_activated) {
